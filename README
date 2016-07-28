@@ -1,0 +1,13 @@
+Moses2 server test
+
+Use the perl script to send a high-volume stream of translation requests to moses2 running in server mode - run both on the same machine to max throughput, 
+
+We're using an input file of 5k lines and call the script like this:
+
+./moses_translate.pl --maxjobs 4 http://localhost:6003/RPC2 < (head -n650 testfile )
+
+I've included a sample moses2.ini, but any local one you have should be fine.
+
+If everything crashes correctly, you should get a core dump, the backtrace should look like the one in moses2.backtrace
+
+
