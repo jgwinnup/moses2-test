@@ -1,0 +1,7 @@
+Michael:  when I compile a debug version and modify contrib/other-builds/moses2/Vector.h (::resize) to assert (m_size <= m_maxSize) [instead of just '<'], I can get it to reliably fail at: contrib/other-builds/moses2/FF/LexicalReordering/../../legacy/Bitmap.h:141 when trying to access m_bitmap[pos], where pos = 1264016111
+Michael:  not sure if this is indicative of some other problem, but I noticed when checking the failed assert that m_size was 0, which seems likely incorrect
+Jeremy:  that pos seems suspect
+Michael:  yes it does
+Michael:  strangely, I get different errors depending on whether or not im running through the debugger or not
+Jeremy:  it's a heisenbug
+
